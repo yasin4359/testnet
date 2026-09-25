@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Shorts Studio: episode JSON -> Google Flow prompts -> ready-to-upload vertical Short.
+"""Shorts Studio: episode JSON -> Google Flow (Omni) prompts -> ready-to-upload vertical Short.
 
+  python studio.py refs    episodes/ep001_tomaten.json
   python studio.py prompts episodes/ep001_tomaten.json --lang de
   python studio.py build   episodes/ep001_tomaten.json --lang de [--align whisper] [--music music/bg.mp3]
 
@@ -9,6 +10,7 @@ Output goes to out/<episode id>/.
 """
 import argparse
 import json
+import math
 import os
 import re
 import shutil
@@ -17,7 +19,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 W, H, FPS = 1080, 1920, 30
-MAX_WORDS_PER_SHOT = 17  # roughly what fits in one 8 s Veo clip
+CLIP_MIN, CLIP_MAX = 3, 10  # Omni Flash clip length range (seconds)
+WORDS_PER_SEC = 2.4         # relaxed cartoon speaking pace
 
 LANG_NAME = {"de": "German", "en": "English"}
 
@@ -156,18 +159,44 @@ def load(path):
     return ep, base, cast
 
 
+def clip_seconds(n_words):
+    """Shortest Omni clip that fits the line with a little breathing room (shorter = fewer credits)."""
+    return max(CLIP_MIN, min(CLIP_MAX, math.ceil(n_words / WORDS_PER_SEC + 1.2)))
+
+
+def cmd_refs(args):
+    """Image prompts for the reference sheets attached to every Omni shot."""
+    ep, base, cast = load(args.episode)
+    names = sorted({c for shot in ep["shots"] for c in shot["chars"]})
+    blocks = [f"=== REFERENCE: {cast[c]['name']}  (save as refs/{c}.png, reuse in every episode)\n"
+              f"{base['style']}\nFull-body character reference sheet on a plain light background, "
+              f"front view, neutral friendly expression: {cast[c]['look']}\n{base['negative']}\n"
+              for c in names]
+    text = "\n".join(blocks)
+    out = os.path.join(ROOT, "out", ep["id"], "reference_prompts.txt")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(text)
+    print(f"-> {out}")
+
+
 def cmd_prompts(args):
     ep, base, cast = load(args.episode)
     lang = args.lang
     blocks = []
     for shot in ep["shots"]:
         n_words = len(tokens(shot["line"][lang]))
+        secs = clip_seconds(n_words)
+        too_long = n_words / WORDS_PER_SEC + 1.2 > CLIP_MAX
         who = cast[shot["speaker"]]
         chars = "\n".join(f"- {cast[c]['name']}: {cast[c]['look']}" for c in shot["chars"])
         line = shot["line"][lang].replace("*", "")
         blocks.append(
-            f"=== SHOT {shot['id']}  (save as clips/{ep['id']}/{lang}/{shot['id']}.mp4)"
-            + (f"   !! {n_words} words, may not fit in 8 s" if n_words > MAX_WORDS_PER_SHOT else "")
+            f"=== SHOT {shot['id']}  (save as clips/{ep['id']}/{lang}/{shot['id']}.mp4)\n"
+            f"Omni settings: 9:16, {secs} s, 360p (upscale the keeper to 720p for free) | "
+            f"references: {', '.join('refs/' + c + '.png' for c in shot['chars'])}"
+            + (f"\n!! {n_words} words: probably too long for {CLIP_MAX} s, split this shot" if too_long else "")
             + f"\nSTYLE: {base['style']}\nCHARACTERS:\n{chars}\nSCENE: {shot['scene']}\n"
             f"DIALOGUE: {who['name']} says in {LANG_NAME[lang]} ({who['voice'][lang]}): \"{line}\"\n"
             f"Only {who['name']} speaks; lips move only while speaking. Light ambient garden sounds.\n"
@@ -206,7 +235,7 @@ def cmd_build(args):
                       f"[b{i}]scale={W}:{H}:force_original_aspect_ratio=decrease[fg{i}];"
                       f"[bg{i}][fg{i}]overlay=(W-w)/2:(H-h)/2,fps={FPS},setsar=1,format=yuv420p[v{i}]")
         else:
-            vf.append(f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+            vf.append(f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},"
                       f"fps={FPS},setsar=1,format=yuv420p[v{i}]")
         if has_audio:
             af.append(f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo,"
@@ -283,10 +312,12 @@ def cmd_build(args):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
-    pp = sub.add_parser("prompts", help="write Google Flow prompts for every shot")
+    pr = sub.add_parser("refs", help="write image prompts for the character reference sheets")
+    pp = sub.add_parser("prompts", help="write Google Flow (Omni) prompts for every shot")
     pb = sub.add_parser("build", help="assemble clips into a captioned vertical Short")
-    for sp in (pp, pb):
+    for sp in (pr, pp, pb):
         sp.add_argument("episode")
+    for sp in (pp, pb):
         sp.add_argument("--lang", choices=sorted(LANG_NAME), default="de")
     pb.add_argument("--align", choices=["auto", "whisper"], default="auto",
                     help="caption timing: silence-based estimate, or faster-whisper word timestamps")
@@ -294,7 +325,7 @@ def main():
                     help="how to fit non-vertical clips into 9:16")
     pb.add_argument("--music", help="optional background music file (mixed quietly, looped)")
     args = p.parse_args()
-    {"prompts": cmd_prompts, "build": cmd_build}[args.cmd](args)
+    {"refs": cmd_refs, "prompts": cmd_prompts, "build": cmd_build}[args.cmd](args)
 
 
 if __name__ == "__main__":

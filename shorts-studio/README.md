@@ -3,7 +3,7 @@
 Konuşan bitkiler + uzman açıklaması formatında, **Almanca ve İngilizce** dikey Shorts üretim hattı.
 
 ```
-episodes/*.json  ──prompts──▶  Google Flow (Veo) promptları  ──▶  klipler (shot başına 1)
+episodes/*.json  ──prompts──▶  Google Flow (Omni) promptları  ──▶  klipler (shot başına 1)
                                                                       │
                                yayına hazır MP4 + başlık/açıklama ◀──build──┘
 ```
@@ -13,7 +13,9 @@ episodes/*.json  ──prompts──▶  Google Flow (Veo) promptları  ──�
 - **Mika**: Kıvırcık kızıl saçlı, çilli, sarı yağmurluklu, mavi çizmeli, elinde büyüteç olan çocuk.
 - Bölüme özel bitki karakterleri episode dosyasındaki `cast` alanında tanımlanır.
 
-Tanımlar ve ses tarifleri `characters.json` içinde. Flow'da her karakter için bir kez avatar/"ingredient" oluşturup her shotta aynısını kullanın. Sesi de orada sabitleyin.
+Tanımlar ve ses tarifleri `characters.json` içinde.
+
+**Referans görseller (bir kez yapılır):** `python studio.py refs episodes/ep001_tomaten.json` komutu her karakter için bir görsel promptu yazar. Flow'da bu görselleri üretip `refs/linde.png`, `refs/mika.png` gibi adlarla saklayın. Omni her klipte en fazla 4 referans görsel kabul eder. Prompt dosyası her shotta hangi referansların ekleneceğini söyler. Sesi de karakter başına sabitleyin.
 
 ## Kurulum
 Python 3.9+ ve ffmpeg yeterli (ffmpeg yoksa: `pip install imageio-ffmpeg`).
@@ -26,7 +28,10 @@ Python 3.9+ ve ffmpeg yeterli (ffmpeg yoksa: `pip install imageio-ffmpeg`).
    python studio.py prompts episodes/ep001_tomaten.json --lang en
    ```
    `out/ep001/flow_prompts_de.txt` dosyasında her shot için hazır bir prompt ve kayıt adı bulunur.
-2. **Flow'da üret**: Dikey (9:16) ve sesli üretin. Her shotu verilen adla kaydedin:
+2. **Flow'da Omni ile üret**: Her shotun başında gereken ayar yazar, örneğin `9:16, 5 s, 360p`.
+   - Omni'de süre 3–10 sn arası seçilebilir. Script her shota yeten en kısa süreyi hesaplar; kısa klip daha az kredi yer.
+   - Denemeleri 360p'de yapın. Beğendiğiniz klibi 720p'ye yükseltin (Ultra'da ücretsiz). Montaj onu 1080×1920'ye büyütür.
+   - Her shotu verilen adla kaydedin:
    `clips/ep001/de/01.mp4`, `02.mp4`, … (İngilizce için `clips/ep001/en/…`).
    Görüntü iki dilde aynı olabilir; sadece konuşma dili değişir.
 3. **Montaj**
@@ -53,10 +58,10 @@ Senaryoda `*kelime*` yazılan kelimeler altyazıda sarı görünür.
 
 ## Yeni bölüm yazma kuralları
 - 3 perde: **tartışma** (inatçı ve akıllı karakter) → **sonuç** (inatçı olan bedel öder) → **Mika sorar, Dr. Linde açıklar**.
-- Shot başına tek konuşmacı, en fazla ~15–17 kelime (Veo klibi 8 sn). `prompts` komutu uzun satırlarda uyarı verir.
+- Shot başına tek konuşmacı, en fazla ~20 kelime (Omni klibi en fazla 10 sn). `prompts` komutu uzun satırlarda uyarı verir.
 - Toplam süre 60 saniyenin altında kalmalı.
 - Bilgi doğru ve her bölümde farklı olmalı. Konu listesi `topics.md` içinde.
 
 ## Notlar
-- Veo'nun Almanca telaffuzunu ilk bölümlerde mutlaka dinleyin. Sorun olursa ses ElevenLabs ile üretilip klibe eklenebilir; bu durumda dudak senkronu için klibi sessiz üretin.
+- Omni'nin Almanca telaffuzunu ilk bölümlerde mutlaka dinleyin. Sorun olursa ses ElevenLabs ile üretilip klibe eklenebilir; bu durumda dudak senkronu için klibi sessiz üretin.
 - YouTube'un "altered or synthetic content" beyanı gerçekçi görünen içerik için zorunlu; açıkça çizgi film olan videolarda genelde gerekmez.
