@@ -1,36 +1,43 @@
-# Konu listesi: ilk 30 bölüm
+# Konu listesi
 
-Her konu gerçek bir bahçe hatası ya da yaygın bir mit. İnatçı karakter hatayı yapar, Dr. Linde doğrusunu açıklar.
+Kanal odağı: **BlütenGeheimnis – Jede Blüte hat eine Geschichte.** Çiçeklerin sırları, bilimi ve evrimi.
+Kanaldaki iki etiketle aynı düzen: çoğunluk **GEHEIMNIS**, arada **RATGEBER**.
+🔗 işaretli konular mevcut bir uzun videoya bağlanır: Short'a "ilgili video" linki eklenir.
 
-| # | DE başlık | EN başlık | Özet (Dr. Linde'nin açıklaması) |
+## GEHEIMNIS (çiçek sırları)
+| # | DE başlık | EN başlık | Dr. Linde'nin açıklaması |
 |---|---|---|---|
-| 1 | Warum platzen Tomaten nach dem Regen? | Why Do Tomatoes Split After Rain? | Kuraklıktan sonra ani su alımı; düzenli sulama + malç *(ep001)* |
-| 2 | Warum faulen Tomaten unten schwarz? | Why Do Tomatoes Rot at the Bottom? | Çiçek burnu çürüklüğü: düzensiz sulama yüzünden kalsiyum meyveye ulaşmaz |
-| 3 | Kaffeesatz für alle Pflanzen? | Coffee Grounds for Every Plant? | Az miktar kompostta faydalı; kalın tabaka toprağı kapatır ve küflenir |
-| 4 | Eierschalen gegen Schnecken? | Do Eggshells Stop Slugs? | Denemelerde etkisi zayıf; bira tuzağı ya da bariyer daha iyi |
-| 5 | Mittags gießen verbrennt Blätter? | Does Midday Watering Burn Leaves? | Büyük ölçüde mit; asıl sorun buharlaşma kaybı, sabah sulamak en iyisi |
-| 6 | Warum stirbt Supermarkt-Basilikum? | Why Does Supermarket Basil Die? | Bir saksıda onlarca bitki var; bölüp ayrı saksılara dikmek gerekir |
-| 7 | Sukkulenten zu oft gießen | Overwatering Succulents | Kök çürüklüğü; toprak tamamen kuruyunca sulanmalı |
-| 8 | Tomaten ausgeizen, ja oder nein? | Should You Pinch Tomato Suckers? | Sırık domateste enerji meyveye gider, çalı tiplerinde gerekmez |
-| 9 | Warum sind Gurken bitter? | Why Are Cucumbers Bitter? | Stres (kuraklık, sıcaklık) kukurbitasin maddesini artırır |
-| 10 | Zucchiniblüten fallen ab | Zucchini Flowers Fall Off | Önce erkek çiçekler açar ya da tozlaşma olmamıştır |
-| 11 | Sämlinge werden lang und dünn | Leggy Seedlings | Işık eksik; daha fazla ışık, daha düşük sıcaklık |
-| 12 | Orchideen mit Eiswürfeln gießen? | Ice Cubes for Orchids? | Tartışmalı; tropikal kök için oda sıcaklığında su daha güvenli |
-| 13 | Grüne Kartoffeln essen? | Are Green Potatoes Safe? | Solanin: yeşil kısmı cömertçe kesin, çok yeşilse atın |
-| 14 | Warum Stroh unter Erdbeeren? | Why Straw Under Strawberries? | Meyveyi topraktan uzak tutar, gri küfü azaltır |
-| 15 | Hortensien: blau oder rosa? | Blue or Pink Hydrangeas? | Toprak pH'ı ve alüminyum rengi belirler |
-| 16 | Minze im Beet pflanzen | Planting Mint in a Bed | Kökleriyle her yeri istila eder; saksı içinde dikilmeli |
-| 17 | Marienkäfer gegen Blattläuse | Ladybugs vs. Aphids | Bir larva yüzlerce yaprak biti yer; ilaç onları da öldürür |
-| 18 | Regenwasser oder Leitungswasser? | Rainwater or Tap Water? | Kireç sevmeyen bitkiler (ör. yaban mersini) için yağmur suyu daha iyi |
-| 19 | Eisheilige: zu früh gepflanzt | Planting Out Too Early | Geç don riski; hassas bitkileri Mayıs ortasından sonra dikin |
-| 20 | Zu tief gepflanzt | Planting Too Deep | Çoğu bitkide kök boğazı çürür; domates istisnadır, derin dikilebilir |
-| 21 | Gelbe Blätter: zu viel Wasser? | Yellow Leaves: Too Much Water? | Aşırı sulama ya da azot eksikliği; nasıl ayırt edilir |
-| 22 | Moos im Rasen | Moss in the Lawn | Gölge, sıkışmış ve asidik toprak; sadece moss killer yetmez |
-| 23 | Folgen Sonnenblumen der Sonne? | Do Sunflowers Follow the Sun? | Sadece gençken; açınca doğuya dönük sabit kalır |
-| 24 | Kaktus nie gießen? | Do Cacti Never Need Water? | Büyüme döneminde düzenli su ister, kışın dinlenir |
-| 25 | Rosen falsch schneiden | Pruning Roses Wrong | Gözün üstünden, eğik ve temiz kesim |
-| 26 | Kompost stinkt | Smelly Compost | Fazla yeşil madde ve havasızlık; kahverengi malzeme ekleyip karıştırmak |
-| 27 | Bier gegen Schnecken | Beer Traps for Slugs | Çalışır ama yenilerini de çeker; tuzağı bahçenin kenarına koyun |
-| 28 | Tagetes gegen Schädlinge? | Marigolds vs. Pests? | Toprak nematodlarına kısmen etkili, her zararlıya değil |
-| 29 | Knoblauch aus dem Supermarkt pflanzen | Planting Supermarket Garlic | Olur ama bazıları filizlenmesin diye işlenmiş; tohumluk sarımsak daha iyi |
-| 30 | Warum Bienen Blüten brauchen | Why Bees Need Flowers | Tozlaşma olmazsa kabak ve meyve olmaz; çiçek şeridi ekin |
+| 1 | Folgen Sonnenblumen wirklich der Sonne? | Do Sunflowers Really Follow the Sun? | Sadece gençken; çiçek açınca doğuya bakar, sabah ısınır ve daha çok arı çeker *(ep002)* |
+| 2 | Warum blüht die Kirschblüte nur so kurz? 🔗 | Why Are Cherry Blossoms So Short-Lived? | Hepsi aynı anda açar, tozlaşma kısa sürede biter, bitki enerjisini meyveye verir |
+| 3 | Stacheln statt Dornen: das Rosen-Geheimnis 🔗 | Roses Don't Have Thorns! | Gülde diken değil, yüzey çıkıntısı olan "Stachel" var; kolayca kopar |
+| 4 | Diese Pflanze hört Bienen 🔗 | This Plant Can Hear Bees | Nachtkerze arı vızıltısını duyunca 3 dakika içinde nektarını tatlandırır (2019 çalışması) |
+| 5 | Die Blume, die nach Aas stinkt | The Flower That Smells Like a Corpse | Titanwurz leş kokusu ve ısı üretir, leş sinekleri ve böcekleri çeker |
+| 6 | Wie Orchideen Bienen austricksen | How Orchids Trick Bees | Ragwurz dişi arıya benzer; erkek arı "çiftleşmeye" gelip polen taşır |
+| 7 | Warum Lotusblätter immer sauber sind | Why Lotus Leaves Stay Clean | Mikro tümsekler ve mum tabakası suyu damla yapar, damla kiri de alıp götürür |
+| 8 | Die Blüte, die nur eine Nacht lebt | The Flower That Blooms for One Night | Königin der Nacht; gece aktif güveler ve yarasalar tarafından tozlaşır |
+| 9 | Die Venusfliegenfalle kann zählen | The Venus Flytrap Can Count | 2 dokunuşta kapanır, 5 dokunuşta sindirmeye başlar |
+| 10 | Warum klappt die Mimose zu? | Why Does the Mimosa Fold Up? | Dokununca hücrelerdeki su basıncı hızla düşer; yaprak yiyenleri korkutur |
+| 11 | Bienen sehen, was wir nicht sehen | Bees See What We Can't | Çiçeklerde UV desenleri arıya nektarın yolunu gösterir |
+| 12 | Warum schließen sich Tulpen am Abend? | Why Do Tulips Close at Night? | Sıcaklığa tepki: soğukta taç yaprakların iç yüzü daha yavaş büyür ve çiçek kapanır |
+| 13 | Die Pflanze, die Schnee schmilzt | The Plant That Melts Snow | Kokarca lahanası kendi ısısını üretir, karı eritip açar |
+| 14 | Wie weit fliegt ein Pusteblumen-Samen? | How Far Can a Dandelion Seed Fly? | Tüylerin üstünde oluşan hava girdabı tohumu kilometrelerce taşır |
+| 15 | Die Orchidee mit dem Wassereimer | The Orchid With a Bucket Trap | Kova orkidesi arıyı sıvıya düşürür; arı ancak polen tünelinden çıkabilir |
+| 16 | Gibt es blaue Rosen? | Do Blue Roses Exist? | Doğada yok; gülde mavi pigment yok, "mavi gül" genetik ya da boyalı |
+| 17 | Die seltenste Blume der Welt | The Rarest Flower in the World | Middlemist's Red: bilinen yalnızca 2 bitki |
+| 18 | Warum Kolibri-Blumen rot sind | Why Hummingbird Flowers Are Red | Kuşlar kırmızıyı iyi görür, arılar zor görür; nektar kuşa kalır |
+| 19 | Das Geheimnis der Sonnenblumen-Spirale | The Sunflower Spiral Secret | Fibonacci düzeni tohumları en sıkı biçimde yerleştirir |
+| 20 | Warum Edelweiß so flauschig ist | Why Edelweiss Is So Fluffy | Yünlü tüyler UV'ye ve soğuğa karşı korur |
+| 21 | Die Pflanze, die einmal blüht und stirbt | The Plant That Blooms Once, Then Dies | Agav onlarca yıl bekler, bir kez çiçek açar ve ölür |
+| 22 | Bambus blüht alle 100 Jahre | Bamboo Blooms Once a Century | Bazı türler on yıllarca bekleyip dünyanın her yerinde aynı anda çiçek açar |
+| 23 | Warum duften manche Blumen nur nachts? | Why Some Flowers Smell Only at Night | Gece güvelerini çekmek için kokularını gece salarlar |
+| 24 | Lebende Steine | Living Stones | Lithops taş gibi görünerek yiyicilerden saklanır |
+
+## RATGEBER (bahçe tavsiyesi)
+| # | DE başlık | EN başlık | Dr. Linde'nin açıklaması |
+|---|---|---|---|
+| 25 | Warum platzen Tomaten nach dem Regen? | Why Do Tomatoes Split After Rain? | Kuraklıktan sonra ani su alımı; düzenli sulama ve malç *(ep001)* |
+| 26 | Pflanzen-Nachbarschaft: gute und schlechte Partner 🔗 | Plant Neighbors: Good and Bad Partners | Bazı bitkiler ışık, besin ya da kök salgıları için birbirleriyle yarışır |
+| 27 | Ewige Blüten im Steingarten 🔗 | Forever Blooms for Rock Gardens | İyi drenaj ve kuraklığa dayanıklı türler |
+| 28 | Hortensien: blau oder rosa? | Blue or Pink Hydrangeas? | Toprak pH'ı ve alüminyum rengi belirler |
+| 29 | Orchideen mit Eiswürfeln gießen? | Ice Cubes for Orchids? | Tartışmalı; tropikal köke oda sıcaklığında su daha güvenli |
+| 30 | Rosen richtig schneiden | Pruning Roses Right | Gözün üstünden, eğik ve temiz kesim |
