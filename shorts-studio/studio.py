@@ -170,7 +170,7 @@ def cmd_refs(args):
     names = sorted({c for shot in ep["shots"] for c in shot["chars"]})
     blocks = [f"=== REFERENCE: {cast[c]['name']}  (save as refs/{c}.png, reuse in every episode)\n"
               f"{base['style']}\nFull-body character reference sheet on a plain light background, "
-              f"front view, neutral friendly expression: {cast[c]['look']}\n{base['negative']}\n"
+              f"front view, standing on the ground with a soft shadow, no frame or border, neutral friendly expression: {cast[c]['look']}\n{base['negative']}\n"
               for c in names]
     text = "\n".join(blocks)
     out = os.path.join(ROOT, "out", ep["id"], "reference_prompts.txt")

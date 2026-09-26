@@ -4,7 +4,7 @@
   "characters": {
     "linde": {
       "name": "Dr. Linde",
-      "look": "Friendly female botanist in her 50s, silver bob haircut, round green glasses, mustard-yellow knitted sweater under a dark-green gardening apron, small hand trowel in the apron pocket, leaf-shaped badge on the apron, brown boots.",
+      "look": "Friendly female botanist in her 50s, silver bob haircut, round green glasses, mustard-yellow knitted turtleneck sweater under a dark-green gardening apron, small hand trowel in the apron's front pocket, small leaf-shaped badge on the apron, brown boots.",
       "voice": {
         "de": "warm, calm, slightly husky female voice, clear standard German pronunciation, medium pace",
         "en": "warm, calm, slightly husky female voice, clear neutral accent, medium pace"
@@ -12,7 +12,7 @@
     },
     "mika": {
       "name": "Mika",
-      "look": "Curious 10-year-old kid with short curly red hair and freckles, bright yellow raincoat, blue rubber boots, holding a small magnifying glass.",
+      "look": "Curious 10-year-old kid with short curly red hair and freckles, bright yellow hooded raincoat (hood usually up) with blue cuffs, blue rubber boots, holding a small wooden magnifying glass.",
       "voice": {
         "de": "bright, curious child voice, native German",
         "en": "bright, curious child voice, native English"
