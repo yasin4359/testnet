@@ -39,7 +39,12 @@
       "line": {
         "de": "Guten Morgen, Sonne! Ich folge dir heute *den ganzen Tag*!",
         "en": "Good morning, sun! I'll follow you *all day long*!"
-      }
+      },
+      "trim": [
+        0.45,
+        6.0
+      ],
+      "zoom": 0.045
     },
     {
       "id": "02",

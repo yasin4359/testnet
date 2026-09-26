@@ -18,7 +18,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-W, H, FPS = 1080, 1920, 30
+W, H, FPS = 1080, 1920, 24  # Omni renders at 24 fps
 CLIP_MIN, CLIP_MAX = 3, 10  # Omni Flash clip length range (seconds)
 WORDS_PER_SEC = 2.4         # relaxed cartoon speaking pace
 
@@ -27,7 +27,7 @@ LANG_NAME = {"de": "German", "en": "English"}
 CONFIG = {
     "font": "Arial Black",          # any installed font, or a .ttf dropped into fonts/
     "font_size": 104,
-    "caption_y": 1300,              # vertical centre of the captions (of 1920)
+    "caption_y": 1480,             # vertical centre of the captions (of 1920); keeps faces free and stays above the Shorts UI
     "highlight": "&H0033D6FF",      # ASS BGR colour for *emphasised* words (yellow)
     "watermark": "@BlütenGeheimnis",
     "music_volume": 0.10,
@@ -219,7 +219,11 @@ def cmd_build(args):
 
     inputs, vf, af, events, srt = [], [], [], [], []
     offset = 0.0
-    for i, shot in enumerate(ep["shots"]):
+    shots = ep["shots"]
+    if args.shots:  # quick preview of a few shots, e.g. --shots 01,06
+        wanted = args.shots.split(",")
+        shots = [s for s in shots if s["id"] in wanted]
+    for i, shot in enumerate(shots):
         path = os.path.join(clip_dir, f"{shot['id']}.mp4")
         if not os.path.exists(path):
             sys.exit(f"Missing clip: {path}")
@@ -235,7 +239,10 @@ def cmd_build(args):
                       f"[b{i}]scale={W}:{H}:force_original_aspect_ratio=decrease[fg{i}];"
                       f"[bg{i}][fg{i}]overlay=(W-w)/2:(H-h)/2,fps={FPS},setsar=1,format=yuv420p[v{i}]")
         else:
-            vf.append(f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},"
+            # "zoom": 0.05 crops 5 % off every edge (removes baked-in borders/rounded corners)
+            z = 1 + 2 * shot.get("zoom", 0)
+            vf.append(f"[{i}:v]scale={int(W * z)}:{int(H * z)}:force_original_aspect_ratio=increase:flags=lanczos,"
+                      f"crop={W}:{H},"
                       f"fps={FPS},setsar=1,format=yuv420p[v{i}]")
         if has_audio:
             af.append(f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo,"
@@ -261,7 +268,8 @@ def cmd_build(args):
                         shot["line"][lang].replace("*", "")))
         offset += length
 
-    ass_path = os.path.join(out_dir, f"{ep['id']}_{lang}.ass")
+    tag = f"{ep['id']}_{lang}" + ("_preview" if args.shots else "")
+    ass_path = os.path.join(out_dir, f"{tag}.ass")
     with open(ass_path, "w", encoding="utf-8") as f:
         f.write("[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\nWrapStyle: 2\n\n" % (W, H))
         f.write("[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, "
@@ -278,11 +286,11 @@ def cmd_build(args):
             f.write(f"Dialogue: 1,{ass_time(s)},{ass_time(e)},Cap,,0,0,0,,"
                     f"{{\\pos({W // 2},{cfg['caption_y']})}}{text}\n")
 
-    with open(os.path.join(out_dir, f"{ep['id']}_{lang}.srt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(out_dir, f"{tag}.srt"), "w", encoding="utf-8") as f:
         for k, (s, e, text) in enumerate(srt, 1):
             f.write(f"{k}\n{srt_time(s)} --> {srt_time(e)}\n{text}\n\n")
 
-    n = len(ep["shots"])
+    n = len(shots)
     concat = "".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[cv][ca]"
     esc = lambda p: p.replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
     subs = f"[cv]subtitles='{esc(ass_path)}':fontsdir='{esc(os.path.join(ROOT, 'fonts'))}'[vout]"
@@ -294,14 +302,14 @@ def cmd_build(args):
                  f"loudnorm=I={cfg['loudness']}:TP=-1.5:LRA=11[aout]")
     graph = ";".join(vf + af + [concat, subs, audio])
 
-    video = os.path.join(out_dir, f"{ep['id']}_{lang}.mp4")
+    video = os.path.join(out_dir, f"{tag}.mp4")
     run([ffmpeg_bin(), "-hide_banner", "-y", *inputs, "-filter_complex", graph,
          "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
          "-movflags", "+faststart", video])
 
     meta = ep["meta"][lang]
-    with open(os.path.join(out_dir, f"{ep['id']}_{lang}_upload.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(out_dir, f"{tag}_upload.txt"), "w", encoding="utf-8") as f:
         f.write(f"TITLE:\n{meta['title']}\n\nDESCRIPTION:\n{meta['description']}\n\n"
                 f"{' '.join(meta['hashtags'])}\n")
     print(f"-> {video}  ({offset:.1f} s)")
@@ -323,6 +331,7 @@ def main():
                     help="caption timing: silence-based estimate, or faster-whisper word timestamps")
     pb.add_argument("--fit", choices=["crop", "blur"], default="crop",
                     help="how to fit non-vertical clips into 9:16")
+    pb.add_argument("--shots", help="build only these shot ids, e.g. 01,06 (preview)")
     pb.add_argument("--music", help="optional background music file (mixed quietly, looped)")
     args = p.parse_args()
     {"refs": cmd_refs, "prompts": cmd_prompts, "build": cmd_build}[args.cmd](args)

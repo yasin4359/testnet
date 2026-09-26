@@ -1,6 +1,6 @@
 {
   "style": "Flat 2D cartoon animation, thick dark-brown outlines, soft pastel colors, subtle paper texture, children's picture-book look, simple shapes, cute expressive faces with big round eyes and small mouths, smooth limited animation (mouth movement, blinking, small bounces). Vertical 9:16 frame. Consistent character designs across all shots.",
-  "negative": "No subtitles, no captions, no on-screen text, no logos, no watermarks. No background music.",
+  "negative": "Full-bleed frame edge to edge: no border, no rounded corners, no fade-in or fade-out. No subtitles, no captions, no on-screen text, no logos, no watermarks. No background music.",
   "characters": {
     "linde": {
       "name": "Dr. Linde",
