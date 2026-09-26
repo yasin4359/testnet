@@ -1,0 +1,126 @@
+{
+  "id": "ep001",
+  "topic": "Why tomatoes split after heavy rain",
+  "cast": {
+    "toni": {
+      "name": "Toni",
+      "look": "Cheeky tomato plant in the ground with a face on its main stem, several ripe red tomatoes, bare dry soil around it (no mulch).",
+      "voice": {
+        "de": "cocky, energetic young male voice, native German",
+        "en": "cocky, energetic young male voice, native English"
+      }
+    },
+    "tilda": {
+      "name": "Tilda",
+      "look": "Calm, sensible tomato plant with a face on its main stem, ripe red tomatoes, a thick layer of straw mulch around its base.",
+      "voice": {
+        "de": "calm, slightly sarcastic female voice, native German",
+        "en": "calm, slightly sarcastic female voice, native English"
+      }
+    }
+  },
+  "shots": [
+    {
+      "id": "01",
+      "chars": ["toni", "tilda"],
+      "scene": "Hot sunny vegetable garden. Toni and Tilda stand side by side. Toni droops and sweats, the soil around him is cracked and dry. Tilda looks relaxed.",
+      "speaker": "toni",
+      "line": {
+        "de": "Zwei Wochen kein Regen... ich bin *total* ausgetrocknet!",
+        "en": "Two weeks without rain... I'm *totally* dried out!"
+      }
+    },
+    {
+      "id": "02",
+      "chars": ["toni", "tilda"],
+      "scene": "Same garden. Tilda turns to Toni and gestures with a leaf toward the straw around her base.",
+      "speaker": "tilda",
+      "line": {
+        "de": "Ich hab Stroh um mich herum. Mein Boden bleibt schön feucht.",
+        "en": "I've got straw around me. My soil stays nice and moist."
+      }
+    },
+    {
+      "id": "03",
+      "chars": ["toni", "tilda"],
+      "scene": "Dark clouds roll in and heavy rain starts pouring. Toni opens his mouth wide and happily gulps the rain, puddles form around his bare soil.",
+      "speaker": "toni",
+      "line": {
+        "de": "Endlich Regen! Ich trinke *alles* auf einmal!",
+        "en": "Finally, rain! I'm drinking *everything* at once!"
+      }
+    },
+    {
+      "id": "04",
+      "chars": ["toni", "tilda"],
+      "scene": "Heavy rain continues. Tilda looks worried and leans toward Toni. Toni's tomatoes visibly swell.",
+      "speaker": "tilda",
+      "line": {
+        "de": "Nicht so schnell! Deine Tomaten kommen da nicht mit!",
+        "en": "Not so fast! Your tomatoes can't keep up!"
+      }
+    },
+    {
+      "id": "05",
+      "chars": ["toni", "tilda"],
+      "scene": "Next morning, sunny, wet soil. Toni looks down in shock: all his tomatoes have big cracks in their skin. Tilda's tomatoes are smooth and perfect.",
+      "speaker": "toni",
+      "line": {
+        "de": "Was?! Warum sind meine Tomaten *aufgeplatzt*?",
+        "en": "What?! Why did my tomatoes *split open*?"
+      }
+    },
+    {
+      "id": "06",
+      "chars": ["mika", "linde"],
+      "scene": "Mika and Dr. Linde stand in the garden next to the tomato plants. Mika holds up a cracked tomato and looks at Dr. Linde.",
+      "speaker": "mika",
+      "line": {
+        "de": "Dr. Linde, warum platzen Tomaten nach starkem Regen?",
+        "en": "Dr. Linde, why do tomatoes split after heavy rain?"
+      }
+    },
+    {
+      "id": "07",
+      "chars": ["mika", "linde"],
+      "scene": "Dr. Linde explains kindly, pointing at the cracked tomato in Mika's hand.",
+      "speaker": "linde",
+      "line": {
+        "de": "Nach langer Trockenheit nimmt die Pflanze plötzlich sehr viel Wasser auf.",
+        "en": "After a long dry spell, the plant suddenly takes up lots of water."
+      }
+    },
+    {
+      "id": "08",
+      "chars": ["mika", "linde"],
+      "scene": "Close-up of the cracked tomato. Dr. Linde traces the crack with her finger while talking.",
+      "speaker": "linde",
+      "line": {
+        "de": "Die Frucht wächst dann schneller, als ihre Schale sich dehnen kann.",
+        "en": "The fruit then swells faster than its skin can stretch."
+      }
+    },
+    {
+      "id": "09",
+      "chars": ["mika", "linde"],
+      "scene": "Dr. Linde crouches and spreads straw mulch around a tomato plant while Mika watches and nods.",
+      "speaker": "linde",
+      "line": {
+        "de": "Darum: *regelmäßig gießen* und mulchen. Dann bleibt die Feuchtigkeit gleichmäßig.",
+        "en": "So: *water regularly* and mulch. That keeps the moisture even."
+      }
+    }
+  ],
+  "meta": {
+    "de": {
+      "title": "Warum platzen Tomaten nach dem Regen? 🍅",
+      "description": "Aufgeplatzte Tomaten nach einem Regenguss? Dr. Linde erklärt, warum das passiert und wie du es mit regelmäßigem Gießen und Mulch verhinderst.",
+      "hashtags": ["#tomaten", "#garten", "#gartentipps", "#pflanzen", "#shorts"]
+    },
+    "en": {
+      "title": "Why Do Tomatoes Split After Rain? 🍅",
+      "description": "Cracked tomatoes after a downpour? Dr. Linde explains why it happens and how regular watering and mulch prevent it.",
+      "hashtags": ["#tomatoes", "#gardening", "#gardentips", "#plants", "#shorts"]
+    }
+  }
+}

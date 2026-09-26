@@ -1,0 +1,165 @@
+{
+  "id": "ep002",
+  "topic": "Do sunflowers really follow the sun?",
+  "cast": {
+    "sunny": {
+      "name": "Sunny",
+      "look": "Small young sunflower seedling standing firmly in the soil, knee-high to the adult sunflowers. Its head is a CLOSED, tight green bud (no yellow petals open yet) with a cute face on the bud: big round eyes, small smile, rosy cheeks. Thin light-green stem with two small leaves like little arms. Eager, bouncy personality.",
+      "voice": {
+        "de": "cheerful, excited young voice, native German",
+        "en": "cheerful, excited young voice, native English"
+      }
+    },
+    "helga": {
+      "name": "Helga",
+      "look": "Very tall, old sunflower, three times taller than Sunny, thick sturdy stem with large drooping leaves. Huge heavy flower head with deep golden petals, a few petal tips slightly curled and faded. Her face sits in a large dark-brown center full of seed texture: heavy-lidded calm eyes, gentle wise smile, small round reading glasses. Slow, relaxed body language.",
+      "voice": {
+        "de": "relaxed, wise older female voice, native German",
+        "en": "relaxed, wise older female voice, native English"
+      }
+    },
+    "sunny_bloom": {
+      "name": "Sunny",
+      "look": "The same young sunflower Sunny a few weeks later, now in bloom: light-green face in the center surrounded by pale yellow and peach petals, thin green stem with two small leaves, still smaller than Helga.",
+      "voice": {
+        "de": "cheerful, excited young voice, native German",
+        "en": "cheerful, excited young voice, native English"
+      }
+    }
+  },
+  "shots": [
+    {
+      "id": "01",
+      "chars": [
+        "sunny",
+        "helga"
+      ],
+      "scene": "Sunrise over a sunflower field. Sunny turns its bud eagerly toward the rising sun in the east. Helga stands next to it, her big flower head facing east.",
+      "speaker": "sunny",
+      "line": {
+        "de": "Guten Morgen, Sonne! Ich folge dir heute *den ganzen Tag*!",
+        "en": "Good morning, sun! I'll follow you *all day long*!"
+      },
+      "trim": [
+        0.45,
+        6.0
+      ],
+      "zoom": 0.045
+    },
+    {
+      "id": "02",
+      "chars": [
+        "sunny",
+        "helga"
+      ],
+      "scene": "Same field. Helga smiles calmly without moving her head, still facing east.",
+      "speaker": "helga",
+      "line": {
+        "de": "Genieß es, solange du jung bist. Ich schaue nur noch nach Osten.",
+        "en": "Enjoy it while you're young. I only face east now."
+      }
+    },
+    {
+      "id": "03",
+      "chars": [
+        "sunny",
+        "helga"
+      ],
+      "scene": "Sunset. Sunny's bud now points west toward the setting sun. Helga still faces east.",
+      "speaker": "sunny",
+      "line": {
+        "de": "Und nachts drehe ich mich wieder zurück. Warum machst du nicht mit?",
+        "en": "And at night I turn all the way back. Why don't you join in?"
+      }
+    },
+    {
+      "id": "04",
+      "chars": [
+        "sunny",
+        "helga"
+      ],
+      "scene": "Next morning. The first sun rays hit Helga's flower head and a few bees fly toward her.",
+      "speaker": "helga",
+      "line": {
+        "de": "Weil morgens die Bienen kommen. Und die mögen es *warm*.",
+        "en": "Because the bees come in the morning. And they like it *warm*."
+      }
+    },
+    {
+      "id": "05",
+      "chars": [
+        "sunny_bloom",
+        "helga"
+      ],
+      "scene": "Weeks later. Sunny has bloomed into a big open sunflower facing east. It strains to turn toward the sun but cannot move, looking surprised.",
+      "speaker": "sunny_bloom",
+      "line": {
+        "de": "Hey... warum kann ich mich *nicht mehr drehen*?",
+        "en": "Hey... why can't I *turn anymore*?"
+      }
+    },
+    {
+      "id": "06",
+      "chars": [
+        "mika",
+        "linde"
+      ],
+      "scene": "Mika and Dr. Linde stand in the sunflower field. Mika looks up at the tall sunflowers, then at Dr. Linde.",
+      "speaker": "mika",
+      "line": {
+        "de": "Dr. Linde, folgen Sonnenblumen wirklich der Sonne?",
+        "en": "Dr. Linde, do sunflowers really follow the sun?"
+      }
+    },
+    {
+      "id": "07",
+      "chars": [
+        "mika",
+        "linde"
+      ],
+      "scene": "Dr. Linde points at a young sunflower's stem while explaining.",
+      "speaker": "linde",
+      "line": {
+        "de": "Nur junge. Tagsüber wächst die Ostseite des Stängels schneller, nachts die Westseite.",
+        "en": "Only young ones. By day the east side of the stem grows faster, at night the west side."
+      }
+    },
+    {
+      "id": "08",
+      "chars": [
+        "mika",
+        "linde"
+      ],
+      "scene": "Dr. Linde gestures to a row of blooming sunflowers all facing east, bees buzzing around them in the morning light.",
+      "speaker": "linde",
+      "line": {
+        "de": "Blühende Köpfe schauen nach Osten. So werden sie morgens warm und locken *mehr Bienen* an.",
+        "en": "Blooming heads face east. They warm up in the morning and attract *more bees*."
+      }
+    }
+  ],
+  "meta": {
+    "de": {
+      "title": "Folgen Sonnenblumen wirklich der Sonne? 🌻",
+      "description": "Nur junge Sonnenblumen drehen sich mit der Sonne. Warum blühende Köpfe nach Osten schauen und was die Bienen damit zu tun haben, erklärt Dr. Linde. Mehr Blütengeheimnisse auf @BlütenGeheimnis.",
+      "hashtags": [
+        "#sonnenblume",
+        "#blumen",
+        "#pflanzen",
+        "#natur",
+        "#shorts"
+      ]
+    },
+    "en": {
+      "title": "Do Sunflowers Really Follow the Sun? 🌻",
+      "description": "Only young sunflowers track the sun. Dr. Linde explains why blooming heads face east and what bees have to do with it.",
+      "hashtags": [
+        "#sunflower",
+        "#flowers",
+        "#plants",
+        "#nature",
+        "#shorts"
+      ]
+    }
+  }
+}
