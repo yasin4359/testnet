@@ -18,8 +18,11 @@ Tanımlar ve ses tarifleri `characters.json` içinde.
 **Referans görseller (bir kez yapılır):** `python studio.py refs episodes/ep001_tomaten.json` komutu her karakter için bir görsel promptu yazar. Flow'da bu görselleri üretip `refs/linde.png`, `refs/mika.png` gibi adlarla saklayın. Omni her klipte en fazla 4 referans görsel kabul eder. Prompt dosyası her shotta hangi referansların ekleneceğini söyler. Sesi de karakter başına sabitleyin.
 
 ## Kurulum
-Python 3.9+ ve ffmpeg yeterli (ffmpeg yoksa: `pip install imageio-ffmpeg`).
-İsteğe bağlı, daha isabetli altyazı zamanlaması için: `pip install faster-whisper`
+**Windows:** [python.org](https://www.python.org/downloads/) üzerinden Python'u kurun ("Add python.exe to PATH" kutusunu işaretleyin), sonra bu klasördeki `kurulum.bat` dosyasına çift tıklayın.
+
+**Mac / Linux:** `python3 -m pip install imageio-ffmpeg faster-whisper`
+
+ffmpeg, `imageio-ffmpeg` paketiyle birlikte gelir; ayrıca kurmanız gerekmez. `faster-whisper` isteğe bağlıdır; daha isabetli altyazı zamanlaması sağlar ve ilk kullanımda modeli (~500 MB) bir kez indirir.
 
 ## Bir bölüm nasıl üretilir
 1. **Promptları al**
