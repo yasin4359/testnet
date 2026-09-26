@@ -4,14 +4,13 @@
 Videolardaki ana karakter (çocuk) `assets/karakter.png` olarak görsel üretiminde referans verilir;
 böylece profil ve videolardaki karakter aynı olur.
 
-**İsim alanı:** Gönül Defteri 🤍  ("Gönül Defteri" kelimesi Instagram aramasında çıkar)
+**Kullanıcı adı:** `kalbe.iyi.gelen`
 
-**Kullanıcı adı önerileri** (müsaitliği Instagram'da kontrol edin):
-gonuldefteri.tr · gonul.defteri · kalbe.dokunan.sozler · yureginsesi.tr · sessizdualarim
+**İsim alanı:** Kalbe İyi Gelen 🤍 · Güzel Sözler  (bu alan Instagram aramasında çıkar)
 
 **Biyografi (150 karakter sınırı):**
 ```
-Kalbe dokunan kısa sözler 🤍
+Kalbine iyi gelecek kısa sözler 🤍
 Anne • Dua • Hayat dersleri
 Her gün yeni bir video ☕
 Kaydet, sevdiğine gönder 👇

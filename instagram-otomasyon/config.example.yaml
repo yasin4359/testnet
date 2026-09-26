@@ -1,5 +1,5 @@
 # Bu dosyayı config.yaml olarak kopyalayıp düzenleyin.
-hesap_adi: hesabiniz            # videonun sonunda @HESABINIZ olarak görünür
+hesap_adi: kalbe.iyi.gelen      # videonun sonunda @KALBE.IYI.GELEN olarak görünür
 dil: Türkçe
 temalar:                        # her videoda rastgele biri seçilir
   - anne sevgisi
