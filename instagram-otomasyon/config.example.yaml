@@ -1,0 +1,24 @@
+# Bu dosyayı config.yaml olarak kopyalayıp düzenleyin.
+hesap_adi: hesabiniz            # videonun sonunda @HESABINIZ olarak görünür
+dil: Türkçe
+temalar:                        # her videoda rastgele biri seçilir
+  - anne sevgisi
+  - dua ve şükür
+  - kendini sevmek, kendinden özür dilemek
+  - hayat dersi / atasözü yorumu
+  - dürüstlük ve iyi insan olmak
+  - sabır ve umut
+stiller:                        # sicak_illustrasyon | karakalem | kil_figur | metafor
+  - sicak_illustrasyon
+  - karakalem
+sahne_sayisi: [3, 6]
+claude_model: claude-opus-5
+gorsel_saglayici: gemini        # gemini | yerel (API'siz deneme)
+gemini_model: gemini-2.5-flash-image
+karakter_referansi: assets/karakter.png   # her sahnede aynı karakter için (isteğe bağlı)
+muzik_klasoru: assets/muzik     # telifsiz müziklerinizi buraya koyun
+font: assets/fonts/PatrickHand-Regular.ttf
+cikti_klasoru: cikti
+onay_gerekli: true              # false = üretilen video direkt paylaşılır
+instagram_api_host: graph.facebook.com
+instagram_api_surumu: v23.0
