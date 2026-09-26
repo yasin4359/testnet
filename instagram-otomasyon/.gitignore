@@ -1,0 +1,6 @@
+.env
+config.yaml
+cikti/
+__pycache__/
+assets/muzik/*
+!assets/muzik/.gitkeep
