@@ -29,7 +29,7 @@ CONFIG = {
     "font_size": 104,
     "caption_y": 1300,              # vertical centre of the captions (of 1920)
     "highlight": "&H0033D6FF",      # ASS BGR colour for *emphasised* words (yellow)
-    "watermark": "@blutengeheimnis",
+    "watermark": "@BlütenGeheimnis",
     "music_volume": 0.10,
     "loudness": -14,
 }
