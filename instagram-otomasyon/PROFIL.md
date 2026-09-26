@@ -1,7 +1,8 @@
 # Instagram profil bilgileri
 
-**Profil resmi:** `assets/profil_resmi.png` (1080x1080). Aynı karakter `assets/karakter.png` olarak
-görsel üretiminde referans verilir; böylece profil ve videolardaki karakter aynı olur.
+**Profil resmi:** `assets/profil_resmi.png` (1080x1080): başörtülü anne, çocuğuna sarılıyor.
+Videolardaki ana karakter (çocuk) `assets/karakter.png` olarak görsel üretiminde referans verilir;
+böylece profil ve videolardaki karakter aynı olur.
 
 **İsim alanı:** Gönül Defteri 🤍  ("Gönül Defteri" kelimesi Instagram aramasında çıkar)
 
